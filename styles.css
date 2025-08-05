@@ -231,14 +231,18 @@ section {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    justify-content:stretch;
+    padding:0 20px;
+    max-width: 1200px;
+    margin=0 auto;
 }
 
 .project-card {
     background-color: white;
     border-radius: 25px;
-    padding: 40px 30px;
+    padding: 40px 30px 30px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: all 0.4s ease;
     position: relative;
@@ -251,7 +255,7 @@ section {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 50%;
     height: 100%;
     background: linear-gradient(135deg, rgba(212,161,199,0.1), rgba(230,184,217,0.2));
     z-index: -1;
@@ -316,12 +320,40 @@ section {
     font-weight: 600;
 }
 
-/* Education Section */
+/* Project Button */
+.project-button {
+    display: block;
+    width: 200px;
+    margin: 20px auto 0;
+    padding: 12px 20px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+.project-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212,161,199,0.4);
+    background: linear-gradient(to right, var(--secondary), var(--primary));
+}
+
+.project-button i {
+    margin-left: 2px;
+}
+
+/* Education Section - Fixed Timeline */
 .education-path {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 20px 0 40px;
 }
 
 .path-line {
@@ -330,7 +362,7 @@ section {
     left: 50%;
     transform: translateX(-50%);
     width: 4px;
-    height: 100%;
+    height: calc(100% - 40px); /* Adjusted height */
     background-color: var(--secondary);
     z-index: 1;
 }
@@ -338,7 +370,7 @@ section {
 .education-item {
     position: relative;
     width: 50%;
-    padding: 0 40px 40px;
+    padding: 0 40px 60px; /* Increased bottom padding */
     box-sizing: border-box;
 }
 
@@ -379,7 +411,7 @@ section {
 
 .education-dot {
     position: absolute;
-    top: 30px;
+    top: 40px; /* Adjusted position */
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -396,25 +428,33 @@ section {
     left: -8px;
 }
 
-.education-date {
-    font-weight: 600;
-    color: var(--primary);
-    margin-bottom: 10px;
-}
-
-.education-item h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-}
-
-.institution {
-    color: var(--dark);
-    margin-bottom: 5px;
-}
-
-.grade {
-    font-weight: 600;
-    color: var(--primary);
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .education-path::before {
+        left: 30px;
+    }
+    
+    .education-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 0;
+    }
+    
+    .education-item:nth-child(even) {
+        left: 0;
+    }
+    
+    .education-item:nth-child(odd) .education-dot,
+    .education-item:nth-child(even) .education-dot {
+        left: 20px;
+        right: auto;
+    }
+    
+    .education-item:nth-child(odd) .education-content::after,
+    .education-item:nth-child(even) .education-content::after {
+        left: -10px;
+        right: auto;
+    }
 }
 
 /* Contact Section */
@@ -632,3 +672,26 @@ footer {
         font-size: 2rem;
     }
 }
+.project-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 15px 0 20px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary);
+    font-size: 0.9rem;
+}
+
+.project-btn:hover {
+    background-color: transparent;
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212,161,199,0.3);
+}
+
+
+
