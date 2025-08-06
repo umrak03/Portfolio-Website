@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', revealOnScroll);
 
     // Initialize elements with hidden state
-    document.querySelectorAll('.education-item, .project-card').forEach(element => {
+    document.querySelectorAll('.education-item, .project-card, #kaggle .project-card').forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(30px)';
         element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -82,7 +82,7 @@ function scrollToSection(sectionId) {
 }
 
 function revealOnScroll() {
-    const elements = document.querySelectorAll('.education-item, .project-card');
+    const elements = document.querySelectorAll('.education-item, .project-card, #kaggle .project-card');
     const windowHeight = window.innerHeight;
     
     elements.forEach(element => {
