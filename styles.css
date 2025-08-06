@@ -236,7 +236,7 @@ section {
     justify-content:stretch;
     padding:0 20px;
     max-width: 1200px;
-    margin=0 auto;
+    margin: 0 auto;
 }
 
 .project-card {
@@ -692,6 +692,55 @@ footer {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(212,161,199,0.3);
 }
+/* Kaggle Project Styling */
+/* Add this to your existing CSS */
+#kaggle .project-icon {
+   width: 70px;
+    height: 70px;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    color: var(--primary);
+    font-size: 1.8rem;
+}
 
+#kaggle .project-tag {
+   display: inline-block;
+    padding: 5px 15px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+#kaggle .project-btn {
+    background-color: hsl(292, 87%, 22%);
+    border-color: hsl(292, 87%, 22%);
+}
+
+#kaggle .project-btn:hover {
+    color: hsl(292, 87%, 22%);
+    background-color: transparent;
+}
+
+/* Fix for projects grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+/* Fix for navigation link */
+nav li a[href="#kaggle"] {
+    color: var(--text);
+}
+nav li a[href="#kaggle"]:hover {
+    color: var(--primary);
+}
 
 
