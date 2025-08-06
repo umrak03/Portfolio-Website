@@ -114,3 +114,4 @@ function showMessage(message, type) {
         }, 300);
     }, 3000);
 }
+
